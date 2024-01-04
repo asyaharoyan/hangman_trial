@@ -12,15 +12,7 @@ class Hangman:
    ]
 
    hangman = [
-       """
-   ______________
-   |_______
-   |      
-   |      
-   |     
-   |     
-   _____________
-   """, """
+   """
    ______________
    |_______
    |      |
@@ -28,7 +20,8 @@ class Hangman:
    |     
    |     
    _____________
-   """, """
+   """, 
+   """
    ______________
    |_______
    |      |
@@ -36,7 +29,8 @@ class Hangman:
    |     
    |     
    _____________
-   """, """
+   """, 
+   """
    ______________
    |_______
    |      |
@@ -44,7 +38,8 @@ class Hangman:
    |      |
    |     
    _____________
-   """, """
+   """, 
+   """
    ______________
    |_______
    |      |
@@ -52,20 +47,22 @@ class Hangman:
    |     /|
    |      
    _____________
-   """, """
+   """, 
+   """
    ______________
    |_______
    |      |
    |      O
-   |     /|\
-   |     / \
+   |     /|\\
+   |     
    _____________
-   """, """
+   """, 
+   """
    ______________
    |_______
    |      |
    |      O
-   |     /|\
+   |     /|\\
    |     / 
    _____________
    """, """
@@ -73,8 +70,8 @@ class Hangman:
    |_______
    |      |
    |      O
-   |     /|\
-   |     / \
+   |     /|\\
+   |     / \\
    _____________
    """
    ]
@@ -143,7 +140,7 @@ class Hangman:
          print("You have used the following letters: ", self.used_letters,
                "\n")
          print("The word is ", self.current_guess, "\n")
-         guess = input("Please guess a letter:  ").upper()
+         guess = input("Please guess a letter:  \n").upper()
          #check if the input is a letter. The line of the code is taken from https://codereview.stackexchange.com/
          if not guess.isalpha():
             print("That is not a letter. Please try again! \n")
@@ -182,6 +179,7 @@ class Hangman:
          """, self.word, "\n")
          self.restart_hangman()
       else:
+         print(self.hangman[wrong])
          print("You could not guess the word. The game is over.\n")
          print("The word was ", self.word, "\n")
          self.restart_hangman()
@@ -220,7 +218,7 @@ class Hangman:
             self.finish_game()
             break
          else:
-            self.start_game = input("Please enter a valid value: ").upper()
+            self.start_game = input("Please enter a valid value: \n").upper()
 
    def check_yes_no(self):
       while True:
@@ -231,9 +229,8 @@ class Hangman:
             self.finish_game()
             break
          else:
-            self.start_guess = input("Please enter a valid value: ").upper()
+            self.start_guess = input("Please enter a valid value: \n").upper()
 
 
 user_1 = Hangman("player")
 user_1.welcome()
-
