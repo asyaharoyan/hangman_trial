@@ -107,7 +107,7 @@ class Hangman:
       You have 6 chances to fail. You can not guess the same letter 2 times. 
       If you do not guess the word, the man will be hanged :(
       """)
-      self.start_guess = input("Do you want to start the game? (Y/N)").upper()
+      self.start_guess = input("Do you want to start the game? (Y/N)\n").upper()
       self.check_yes_no()
       return self.start_guess
 
@@ -124,13 +124,13 @@ class Hangman:
       The function asks if the player wants to guess another word.
       """
       self.used_letters = []
-      self.start_guess = input("Do you want to start again?(Y/N) "
-                               "\n").upper()
+      self.start_guess = input("Do you want to start again?(Y/N) \n").upper()
       self.check_yes_no()
 
    def check_guess(self):
       """
-      The function checks if the player guessed right and adds the letter in the word. If it is a wrong guess or the player guesses the same letter the function informs the player and gives a chance to guess again.
+      The function checks if the player guessed right and adds the letter in the word. 
+      If it is a wrong guess or the player guesses the same letter the function informs the player and gives a chance to guess again.
       """
       self.random_word()
       # variable to keep track on wrong answers
@@ -201,7 +201,9 @@ class Hangman:
       self.start_game = input("""
       Do you want to read the instuctions or you want to start the game?
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n
-      Type S to START the game, E to EXIT the game or I to read the INSTRUCTIONS: 
+      Type S to START the game, 
+      E to EXIT the game or 
+      I to read the INSTRUCTIONS: 
       """).upper()
       self.answer_check()
       return self.start_game
