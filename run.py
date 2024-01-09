@@ -85,6 +85,14 @@ class Hangman:
       self.current_guess = ""
       self.used_letters = []
 
+   def validate_name(self):
+      while True:
+        name = input("Please enter your name: \n")
+        if name.isalpha() and len(name) > 1:
+            return name
+        else:
+            print("Please enter a valid name!")
+
    def finish_game(self):
       """
       Ending the game if the player does not want to play again.
@@ -191,11 +199,11 @@ class Hangman:
       """
       The start of the game. Welcomes the player and asks if they want to read instryctions.
       """
-      print("""
-      ******************
-      Welcome to HANGMAN.
-      ******************
-      ------------------
+      print(f"""
+      ******************************
+      Welcome to HANGMAN {self.name}.
+      ******************************
+      ------------------------------
       """)
       print("""
       Try to guess the word.
@@ -236,6 +244,11 @@ class Hangman:
          else:
             self.start_guess = input("Please enter a valid value: \n").upper()
 
+   def main(self):
+        self.validate_name()
+        self.welcome()
 
-user_1 = Hangman("player")
-user_1.welcome()
+
+
+user_1 = Hangman(name = '')
+user_1.main()
