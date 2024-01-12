@@ -249,6 +249,6 @@ class Hangman:
         self.welcome()
 
 
-
+#run the program
 user_1 = Hangman(name = '')
 user_1.main()
