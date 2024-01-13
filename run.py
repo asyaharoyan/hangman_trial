@@ -1,10 +1,10 @@
 # import random to shuffle the words,  colorama for colors
 import random
 import os
-# import colorama
-# from colorama import Fore, Back, Style
+import colorama
+from colorama import Fore, Back, Style
 # how to use the library is taken from https://www.youtube.com/watch?v=u51Zjlnui4Y
-# colorama.init(autoreset = True) # to reset the colort after each line
+colorama.init(autoreset = True) # to reset the colort after each line
 
 
 class Hangman:
